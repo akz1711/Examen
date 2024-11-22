@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Preguntas</title>
+    <link rel="stylesheet" href="/pages/simulador/apariencia.css">
+</head>
+<body>
+    <div class="pregunta" id="pregunta19">
+    <h2>19. ¿Qué valor retorna la función al ser llamada con `sumar(10, 5)`?</h2>
+    <pre>
+function sumar(a, b) {
+    return a + b;
+}
+    </pre>
+    <form>
+        <input type="radio" id="p19o1" name="respuesta19" value="10">
+        <label for="p19o1">A) 10</label><br>
+        <input type="radio" id="p19o2" name="respuesta19" value="15">
+        <label for="p19o2">B) 15</label><br>
+        <input type="radio" id="p19o3" name="respuesta19" value="5">
+        <label for="p19o3">C) 5</label><br>
+        <input type="radio" id="p19o4" name="respuesta19" value="undefined">
+        <label for="p19o4">D) undefined</label><br>
+        <button type="button" onclick="validarPregunta19()">Responder</button>
+    </form>
+    <p id="mensaje19"></p>
+    <a href="simulador.html">Regresar</a>
+</div>
+</body>
+
+
+<script>
+    function validarPregunta19() {
+        const respuesta = document.querySelector('input[name="respuesta19"]:checked');
+        const mensaje = document.getElementById("mensaje19");
+
+        if (!respuesta) {
+            mensaje.textContent = "Por favor, selecciona una opción.";
+            mensaje.style.color = "red";
+            return;
+        }
+
+        if (respuesta.value === "15") {
+            mensaje.textContent = "¡Correcto!";
+            mensaje.style.color = "green";
+        } else {
+            mensaje.textContent = "Incorrecto. La respuesta correcta es B) 15.";
+            mensaje.style.color = "red";
+        }
+    }
+</script>

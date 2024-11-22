@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Preguntas</title>
+    <link rel="stylesheet" href="/pages/simulador/apariencia.css">
+</head>
+<body>
+    
+
+<div class="pregunta" id="pregunta3">
+    <h2>3. ¿Qué retorna <code>esPar(5)</code>?</h2>
+    <pre>
+function esPar(numero) {
+    return numero % 2 === 0;
+}
+    </pre>
+    <form>
+        <input type="radio" id="p3o1" name="respuesta3" value="true">
+        <label for="p3o1">A) true</label><br>
+        <input type="radio" id="p3o2" name="respuesta3" value="false">
+        <label for="p3o2">B) false</label><br>
+        <input type="radio" id="p3o3" name="respuesta3" value="undefined">
+        <label for="p3o3">C) undefined</label><br>
+        <input type="radio" id="p3o4" name="respuesta3" value="error">
+        <label for="p3o4">D) Error de sintaxis</label><br>
+        <button type="button" onclick="validarPregunta3()">Responder</button>
+    </form>
+    <p id="mensaje3"></p>
+    <a href="simulador.html">Regresar</a>
+
+</div>
+</body>
+
+<script>
+    function validarPregunta3() {
+        const respuesta = document.querySelector('input[name="respuesta3"]:checked');
+        const mensaje = document.getElementById("mensaje3");
+
+        if (!respuesta) {
+            mensaje.textContent = "Por favor, selecciona una opción.";
+            mensaje.style.color = "red";
+            return;
+        }
+
+        if (respuesta.value === "false") {
+            mensaje.textContent = "¡Correcto!";
+            mensaje.style.color = "green";
+        } else {
+            mensaje.textContent = "Incorrecto. La respuesta correcta es B) false.";
+            mensaje.style.color = "red";
+        }
+    }
+</script>

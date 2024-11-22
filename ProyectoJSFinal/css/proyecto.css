@@ -1,0 +1,81 @@
+/* apariencia.css */
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f2ff; /* Fondo azul claro */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  
+  h1 {
+    color: #004080; /* Azul oscuro */
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+  width: 100%; /* Asegura que el título ocupe todo el ancho disponible */
+  text-align: center; /* Asegura que el título esté centrado */
+  }
+  
+  /* Contenedor de las tarjetas */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  /* Estilo de cada tarjeta */
+  .card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* Efecto al pasar el mouse */
+  }
+  
+  /* Títulos de las tarjetas */
+  .card h3 {
+    color: #004080; /* Azul oscuro para los títulos */
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  /* Descripción de las tarjetas */
+  .card p {
+    color: #333;
+    font-size: 1em;
+    margin-bottom: 15px;
+  }
+  
+  /* Enlaces de las tarjetas */
+  .card a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff; /* Azul para el enlace */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card a:hover {
+    background-color: #0056b3; /* Azul oscuro al pasar el mouse */
+  }
+  

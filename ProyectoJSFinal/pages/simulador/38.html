@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Preguntas</title>
+    <link rel="stylesheet" href="/pages/simulador/apariencia.css">
+</head>
+<body>
+    <div class="pregunta" id="pregunta31">
+    <h2>31. ¿Qué valor retorna <code>Boolean("");</code>?</h2>
+    <form>
+        <input type="radio" id="p31o1" name="respuesta31" value="true">
+        <label for="p31o1">A) true</label><br>
+        <input type="radio" id="p31o2" name="respuesta31" value="false">
+        <label for="p31o2">B) false</label><br>
+        <input type="radio" id="p31o3" name="respuesta31" value="undefined">
+        <label for="p31o3">C) undefined</label><br>
+        <input type="radio" id="p31o4" name="respuesta31" value="null">
+        <label for="p31o4">D) null</label><br>
+        <button type="button" onclick="validarPregunta31()">Responder</button>
+    </form>
+    <p id="mensaje31"></p>
+    <a href="simulador.html">Regresar</a>
+</div>
+</body>
+
+
+<script>
+    function validarPregunta31() {
+        const respuesta = document.querySelector('input[name="respuesta31"]:checked');
+        const mensaje = document.getElementById("mensaje31");
+
+        if (!respuesta) {
+            mensaje.textContent = "Por favor, selecciona una opción.";
+            mensaje.style.color = "red";
+            return;
+        }
+
+        if (respuesta.value === "false") {
+            mensaje.textContent = "¡Correcto!";
+            mensaje.style.color = "green";
+        } else {
+            mensaje.textContent = "Incorrecto. La respuesta correcta es B) false.";
+            mensaje.style.color = "red";
+        }
+    }
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Preguntas</title>
+    <link rel="stylesheet" href="/pages/simulador/apariencia.css">
+</head>
+<body>
+    <div class="pregunta" id="pregunta20">
+    <h2>20. ¿Qué imprime <code>console.log(3 + "5");</code>?</h2>
+    <pre>
+console.log(3 + "5");
+    </pre>
+    <form>
+        <input type="radio" id="p20o1" name="respuesta20" value="35">
+        <label for="p20o1">A) 35</label><br>
+        <input type="radio" id="p20o2" name="respuesta20" value="8">
+        <label for="p20o2">B) 8</label><br>
+        <input type="radio" id="p20o3" name="respuesta20" value="undefined">
+        <label for="p20o3">C) undefined</label><br>
+        <input type="radio" id="p20o4" name="respuesta20" value="error">
+        <label for="p20o4">D) error</label><br>
+        <button type="button" onclick="validarPregunta20()">Responder</button>
+    </form>
+    <p id="mensaje20"></p>
+    <a href="simulador.html">Regresar</a>
+</div>
+</body>
+
+
+<script>
+    function validarPregunta20() {
+        const respuesta = document.querySelector('input[name="respuesta20"]:checked');
+        const mensaje = document.getElementById("mensaje20");
+
+        if (!respuesta) {
+            mensaje.textContent = "Por favor, selecciona una opción.";
+            mensaje.style.color = "red";
+            return;
+        }
+
+        if (respuesta.value === "35") {
+            mensaje.textContent = "¡Correcto!";
+            mensaje.style.color = "green";
+        } else {
+            mensaje.textContent = "Incorrecto. La respuesta correcta es A) 35.";
+            mensaje.style.color = "red";
+        }
+    }
+</script>

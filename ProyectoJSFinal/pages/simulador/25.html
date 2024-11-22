@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Preguntas</title>
+    <link rel="stylesheet" href="/pages/simulador/apariencia.css">
+</head>
+<body>
+    <div class="pregunta" id="pregunta18">
+    <h2>18. ¿Cuál es la longitud del arreglo `miArreglo`?</h2>
+    <pre>
+let miArreglo = [1, 2, 3, 4, 5];
+let longitud = miArreglo.length;
+console.log(longitud);
+    </pre>
+    <form>
+        <input type="radio" id="p18o1" name="respuesta18" value="3">
+        <label for="p18o1">A) 3</label><br>
+        <input type="radio" id="p18o2" name="respuesta18" value="4">
+        <label for="p18o2">B) 4</label><br>
+        <input type="radio" id="p18o3" name="respuesta18" value="5">
+        <label for="p18o3">C) 5</label><br>
+        <input type="radio" id="p18o4" name="respuesta18" value="6">
+        <label for="p18o4">D) 6</label><br>
+        <button type="button" onclick="validarPregunta18()">Responder</button>
+    </form>
+    <p id="mensaje18"></p>
+    <a href="simulador.html">Regresar</a>
+</div>
+
+<script>
+    function validarPregunta18() {
+        const respuesta = document.querySelector('input[name="respuesta18"]:checked');
+        const mensaje = document.getElementById("mensaje18");
+
+        if (!respuesta) {
+            mensaje.textContent = "Por favor, selecciona una opción.";
+            mensaje.style.color = "red";
+            return;
+        }
+
+        if (respuesta.value === "5") {
+            mensaje.textContent = "¡Correcto!";
+            mensaje.style.color = "green";
+        } else {
+            mensaje.textContent = "Incorrecto. La respuesta correcta es C) 5.";
+            mensaje.style.color = "red";
+        }
+    }
+</script>

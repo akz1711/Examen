@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Preguntas</title>
+    <link rel="stylesheet" href="/pages/simulador/apariencia.css">
+</head>
+<body>  
+    <div class="pregunta" id="pregunta7">
+    <h2>7. ¿Qué valor tiene la variable <code>texto</code>?</h2>
+    <pre>
+let texto = "Hola" + " " + "Mundo";
+    </pre>
+    <form>
+        <input type="radio" id="p7o1" name="respuesta7" value="HolaMundo">
+        <label for="p7o1">A) HolaMundo</label><br>
+        <input type="radio" id="p7o2" name="respuesta7" value="Hola Mundo">
+        <label for="p7o2">B) Hola Mundo</label><br>
+        <input type="radio" id="p7o3" name="respuesta7" value="HolaMundo ">
+        <label for="p7o3">C) HolaMundo </label><br>
+        <input type="radio" id="p7o4" name="respuesta7" value="undefined">
+        <label for="p7o4">D) undefined</label><br>
+        <button type="button" onclick="validarPregunta7()">Responder</button>
+    </form>
+    <p id="mensaje7"></p>
+    <a href="simulador.html">Regresar</a>
+</div>
+</body>
+
+
+<script>
+    function validarPregunta7() {
+        const respuesta = document.querySelector('input[name="respuesta7"]:checked');
+        const mensaje = document.getElementById("mensaje7");
+
+        if (!respuesta) {
+            mensaje.textContent = "Por favor, selecciona una opción.";
+            mensaje.style.color = "red";
+            return;
+        }
+
+        if (respuesta.value === "Hola Mundo") {
+            mensaje.textContent = "¡Correcto!";
+            mensaje.style.color = "green";
+        } else {
+            mensaje.textContent = "Incorrecto. La respuesta correcta es B) Hola Mundo.";
+            mensaje.style.color = "red";
+        }
+    }
+</script>

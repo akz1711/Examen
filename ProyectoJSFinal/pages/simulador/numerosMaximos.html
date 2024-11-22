@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔢 Encuentra el Número Máximo 🔢</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #6e859c, #4da8da);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            color: #007bff;
+            font-family: 'Courier New', monospace;
+            text-align: left;
+            overflow-x: auto;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4da8da;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #6e859c;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #6e859c;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            background-color: #4da8da;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .correcto {
+            color: #28a745;
+        }
+
+        .incorrecto {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔢 Encuentra el Número Máximo 🔢</h1>
+        <div>
+            <h2>El Código:</h2>
+            <pre>
+function encontrarMaximo(arr) {
+    let max = arr[0]; // Línea 2
+    for (let i = 1; i < arr.length; i++) { // Línea 3
+        if (arr[i] > max) { // Línea 4
+            max = arr[i];
+        }
+    }
+    return max;
+}
+            </pre>
+        </div>
+
+        <h2>Pregunta:</h2>
+        <p><strong>¿En qué línea del código está el error?</strong></p>
+        <button onclick="Númeromáximo('linea3')">Línea 3</button>
+        <button onclick="Númeromáximo('linea4')">Línea 4</button>
+        <button onclick="Númeromáximo('linea2')">Línea 2</button>
+
+        <div id="resultado" class="resultado"></div>
+
+        <a href="simulador.html">Regresar</a>
+    </div>
+
+    <script src="../../js/simulador.js"></script>
+</body>
+</html>

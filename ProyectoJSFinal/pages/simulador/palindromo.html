@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔄 ¿Es un Palíndromo? 🔄</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #6e859c, #4da8da);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            color: #007bff;
+            font-family: 'Courier New', monospace;
+            text-align: left;
+            overflow-x: auto;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4da8da;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #6e859c;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #6e859c;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            background-color: #4da8da;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .correcto {
+            color: #28a745;
+        }
+
+        .incorrecto {
+            color: #dc3545;
+        }
+
+        .opciones {
+            text-align: left;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .opcion {
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 ¿Es un Palíndromo? 🔄</h1>
+        <h2>¿Qué hace este código?</h2>
+        <div>
+            <pre>
+function esPalindromo(cadena) {
+    let cadenaInvertida = cadena.split('').reverse().join('');
+    return cadena === cadenaInvertida;
+}
+            </pre>
+        </div>
+
+        <p><strong>Selecciona una respuesta:</strong></p>
+        <div class="opciones">
+            <div class="opcion">
+                <input type="radio" id="opcion1" name="respuesta" value="1">
+                <label for="opcion1">Verifica si la cadena contiene números</label>
+            </div>
+            <div class="opcion">
+                <input type="radio" id="opcion2" name="respuesta" value="2">
+                <label for="opcion2">Verifica si la cadena es un palíndromo</label>
+            </div>
+            <div class="opcion">
+                <input type="radio" id="opcion3" name="respuesta" value="3">
+                <label for="opcion3">Cuenta las letras en la cadena</label>
+            </div>
+        </div>
+
+        <button onclick="palindromocad()">Aceptar</button>
+        <div id="resultado" class="resultado"></div>
+
+        <a href="simulador.html">Regresar</a>
+    </div>
+
+    <script src="../../js/simulador.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio: Suma de los primeros 100 números</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #6e859c, #4da8da);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+       
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffeb3b;
+        }
+        h2 {
+            margin-bottom: 15px;
+            color: #00c9ff;
+        }
+        .codigo-box, .pregunta-box {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        pre {
+            color: #61dafb;
+            font-family: "Consolas", monospace;
+            text-align: left;
+            padding: 10px;
+            background-color: #282c34;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        button, a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            text-decoration: none;
+        }
+        button:hover, a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        #regresar {
+            background-color: #6c757d;
+        }
+        #regresar:hover {
+            background-color: #5a6268;
+        }
+        .botones {
+            margin-top: 20px;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #00ff00;
+        }
+        .incorrecto {
+            color: #ff4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Desafío: Suma de los primeros 100 números 🧠</h1>
+        
+        <div class="codigo-box">
+            <h2>El Código:</h2>
+            <pre>
+function sumaNumeros() {
+    let suma = 0;
+    for (let i = 1; i <= 100; i++) {
+        suma += i;
+    }
+    console.log(suma);
+}
+            </pre>
+        </div>
+
+        <div class="pregunta-box">
+            <h2>Preguntas:</h2>
+            <p><strong>1. ¿Qué hace el código anterior?</strong></p>
+            <button onclick="primerosNumeros('correcto')">Suma los primeros 100 números naturales</button>
+            <button onclick="primerosNumeros('incorrecto')">Suma los números pares del 1 al 100</button>
+            <button onclick="primerosNumeros('incorrecto')">Calcula el promedio de los números del 1 al 100</button>
+
+            <p><strong>2. ¿Qué sucede si cambias la condición <code>i &lt;= 100</code> por <code>i &lt; 100</code>?</strong></p>
+            <button onclick="primerosNumeros('correcto')">Se excluye el número 100 en la suma</button>
+            <button onclick="primerosNumeros('incorrecto')">No afecta el resultado</button>
+            <button onclick="primerosNumeros('incorrecto')">El código entra en un bucle infinito</button>
+        </div>
+
+        <div class="resultado" id="resultado"></div>
+
+        <div class="botones">
+            <a href="simulador.html" id="regresar">Regresar</a>
+        </div>
+    </div>
+
+    <script src="../../js/simulador.js"></script>
+</body>
+</html>

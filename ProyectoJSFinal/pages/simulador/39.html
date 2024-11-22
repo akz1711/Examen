@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Preguntas</title>
+    <link rel="stylesheet" href="/pages/simulador/apariencia.css">
+</head>
+<body>
+    <div class="pregunta" id="pregunta32">
+    <h2>32. ¿Qué valor imprime <code>console.log(2 ** 3);</code>?</h2>
+    <form>
+        <input type="radio" id="p32o1" name="respuesta32" value="6">
+        <label for="p32o1">A) 6</label><br>
+        <input type="radio" id="p32o2" name="respuesta32" value="8">
+        <label for="p32o2">B) 8</label><br>
+        <input type="radio" id="p32o3" name="respuesta32" value="9">
+        <label for="p32o3">C) 9</label><br>
+        <input type="radio" id="p32o4" name="respuesta32" value="undefined">
+        <label for="p32o4">D) undefined</label><br>
+        <button type="button" onclick="validarPregunta32()">Responder</button>
+    </form>
+    <p id="mensaje32"></p>
+    <a href="simulador.html">Regresar</a>
+</div>
+</body>
+
+
+<script>
+    function validarPregunta32() {
+        const respuesta = document.querySelector('input[name="respuesta32"]:checked');
+        const mensaje = document.getElementById("mensaje32");
+
+        if (!respuesta) {
+            mensaje.textContent = "Por favor, selecciona una opción.";
+            mensaje.style.color = "red";
+            return;
+        }
+
+        if (respuesta.value === "8") {
+            mensaje.textContent = "¡Correcto!";
+            mensaje.style.color = "green";
+        } else {
+            mensaje.textContent = "Incorrecto. La respuesta correcta es B) 8.";
+            mensaje.style.color = "red";
+        }
+    }
+</script>

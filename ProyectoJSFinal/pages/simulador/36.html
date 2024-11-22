@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Preguntas</title>
+    <link rel="stylesheet" href="/pages/simulador/apariencia.css">
+</head>
+<body>
+    <div class="pregunta" id="pregunta29">
+    <h2>29. ¿Qué imprime <code>console.log(typeof NaN);</code>?</h2>
+    <form>
+        <input type="radio" id="p29o1" name="respuesta29" value="number">
+        <label for="p29o1">A) number</label><br>
+        <input type="radio" id="p29o2" name="respuesta29" value="NaN">
+        <label for="p29o2">B) NaN</label><br>
+        <input type="radio" id="p29o3" name="respuesta29" value="undefined">
+        <label for="p29o3">C) undefined</label><br>
+        <input type="radio" id="p29o4" name="respuesta29" value="object">
+        <label for="p29o4">D) object</label><br>
+        <button type="button" onclick="validarPregunta29()">Responder</button>
+    </form>
+    <p id="mensaje29"></p>
+    <a href="simulador.html">Regresar</a>
+</div>
+</body>
+
+<script>
+    function validarPregunta29() {
+        const respuesta = document.querySelector('input[name="respuesta29"]:checked');
+        const mensaje = document.getElementById("mensaje29");
+
+        if (!respuesta) {
+            mensaje.textContent = "Por favor, selecciona una opción.";
+            mensaje.style.color = "red";
+            return;
+        }
+
+        if (respuesta.value === "number") {
+            mensaje.textContent = "¡Correcto!";
+            mensaje.style.color = "green";
+        } else {
+            mensaje.textContent = "Incorrecto. La respuesta correcta es A) number.";
+            mensaje.style.color = "red";
+        }
+    }
+</script>

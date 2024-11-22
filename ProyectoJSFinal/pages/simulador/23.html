@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Preguntas</title>
+    <link rel="stylesheet" href="/pages/simulador/apariencia.css">
+</head>
+<body>
+    <div class="pregunta" id="pregunta16">
+    <h2>16. ¿Qué valor retorna la función al ser llamada con `calcularCuadrado(4)`?</h2>
+    <pre>
+function calcularCuadrado(numero) {
+    return numero * numero;
+}
+    </pre>
+    <form>
+        <input type="radio" id="p16o1" name="respuesta16" value="4">
+        <label for="p16o1">A) 4</label><br>
+        <input type="radio" id="p16o2" name="respuesta16" value="8">
+        <label for="p16o2">B) 8</label><br>
+        <input type="radio" id="p16o3" name="respuesta16" value="16">
+        <label for="p16o3">C) 16</label><br>
+        <input type="radio" id="p16o4" name="respuesta16" value="undefined">
+        <label for="p16o4">D) undefined</label><br>
+        <button type="button" onclick="validarPregunta16()">Responder</button>
+    </form>
+    <p id="mensaje16"></p>
+    <a href="simulador.html">Regresar</a>
+</div>
+</body>
+
+
+<script>
+    function validarPregunta16() {
+        const respuesta = document.querySelector('input[name="respuesta16"]:checked');
+        const mensaje = document.getElementById("mensaje16");
+
+        if (!respuesta) {
+            mensaje.textContent = "Por favor, selecciona una opción.";
+            mensaje.style.color = "red";
+            return;
+        }
+
+        if (respuesta.value === "16") {
+            mensaje.textContent = "¡Correcto!";
+            mensaje.style.color = "green";
+        } else {
+            mensaje.textContent = "Incorrecto. La respuesta correcta es C) 16.";
+            mensaje.style.color = "red";
+        }
+    }
+</script>
